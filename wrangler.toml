@@ -13,3 +13,4 @@ enabled = true
 [[kv_namespaces]]
 binding = "EMAILS"
 id = "107c5bac79414a10a3d9bf950b80f104"
+assets = { directory = "./public/" }

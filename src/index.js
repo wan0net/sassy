@@ -16,11 +16,18 @@ export default {
 			const { name, email, cyber } = await request.json();
 
 			// Validate input
-			if (!email || !name || cyber.toLowerCase() !== 'cyber') {
-				return new Response(JSON.stringify({ success: false, message: 'Invalid input or "cyber" misspelled' }), { status: 400 });
+			if (!email) {
+				return new Response(JSON.stringify({ success: false, message: 'Invalid name' }), { status: 400 });
 			}
-			const myText = new TextEncoder().encode(email);
+			if (!email) {
+				return new Response(JSON.stringify({ success: false, message: 'Invalid email' }), { status: 400 });
+			}
+			if (cyber.toLowerCase() !== 'cyber') {
+				return new Response(JSON.stringify({ success: false, message: 'Unfortunately you do not meet the requirements of the program. Please try again' }), { status: 400 });
+			}
 
+
+			const myText = new TextEncoder().encode(email);
 			const digest = await crypto.subtle.digest(
 			  {
 				name: 'SHA-256',
