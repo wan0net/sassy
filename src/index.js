@@ -16,7 +16,7 @@ export default {
 			const { name, email, cyber } = await request.json();
 
 			// Validate input
-			if (!email || !("@" in email) || !name || cyber.toLowerCase() !== 'cyber') {
+			if (!email || !name || cyber.toLowerCase() !== 'cyber') {
 				return new Response(JSON.stringify({ success: false, message: 'Invalid input or "cyber" misspelled' }), { status: 400 });
 			}
 			const myText = new TextEncoder().encode(email);
