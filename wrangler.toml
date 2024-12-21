@@ -1,0 +1,15 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "sassy"
+main = "src/index.js"
+compatibility_date = "2024-12-18"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers Logs
+# Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
+# Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
+[observability]
+enabled = true
+
+[[kv_namespaces]]
+binding = "EMAILS"
+id = "107c5bac79414a10a3d9bf950b80f104"
